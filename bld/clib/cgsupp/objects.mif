@@ -1,5 +1,5 @@
-#                       d16 d32 dpm nt  nta ntp nvc nvl o16 o32 q16 q32 w16 w32 l32 lpc lmp rdu rdk
-#===================================================================================================
+#                       d16 d32 dpm nt  nta ntp nvc nvl o16 o32 q16 q32 w16 w32 l32 lpc lmp rdu rdk ntm
+#========================================================================================================
 !inject __copy.obj          d32     nt          nvc nvl     o32     q32     w32 l32         rdu rdk
 !inject __stos.obj          d32     nt          nvc nvl     o32     q32     w32 l32         rdu rdk
 !inject 7fu8086.obj     d16                             o16     q16     w16
@@ -42,8 +42,8 @@
 !inject i4m.obj         d16                             o16     q16     w16
 !inject i8d.obj             d32     nt          nvc nvl     o32     q32     w32 l32         rdu rdk
 !inject i8d086.obj      d16                             o16     q16     w16
-!inject i8dmps.obj                                                                      lmp
-!inject i8rmps.obj                                                                      lmp
+!inject i8dmps.obj                                                                      lmp         ntm
+!inject i8rmps.obj                                                                      lmp         ntm
 !inject i8fs086.obj     d16                             o16     q16     w16
 !inject i8fs386.obj         d32     nt          nvc nvl     o32     q32     w32 l32         rdu rdk
 !inject i8fd086.obj     d16                             o16     q16     w16
@@ -59,7 +59,7 @@
 !inject lldiv386.obj        d32     nt          nvc nvl     o32     q32     w32 l32         rdu rdk
 !inject lrot.obj        d16                             o16     q16     w16
 !inject mcpyaxp.obj                     nta
-!inject mcpymps.obj                                                                     lmp
+!inject mcpymps.obj                                                                     lmp         ntm
 !inject pia.obj         d16                             o16     q16     w16
 !inject ppcconv.obj                         ntp
 !inject ptc.obj         d16                             o16     q16     w16
@@ -69,9 +69,9 @@
 !inject shrd.obj        d16                             o16     q16     w16
 !inject stkaxp.obj                      nta
 !inject stkppc.obj                          ntp
-!inject stksmps.obj                                                                     lmp
-!inject stkcmps.obj                                                                     lmp
-!inject stkwmps.obj                                                                     lmp
+!inject stksmps.obj                                                                     lmp        ntm
+!inject stkcmps.obj                                                                     lmp        ntm
+!inject stkwmps.obj                                                                     lmp        ntm
 
 !include ../../../../objlist.mif
 

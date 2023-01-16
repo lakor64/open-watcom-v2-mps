@@ -1,7 +1,7 @@
 !ifeq default_windowing 1
 
-#                       d16 d32 dpm nt  nta ntp nvc nvl o16 o32 q16 q32 w16 w32 l32 lpc lmp rdu rdk
-#===================================================================================================
+#                       d16 d32 dpm nt  nta ntp nvc nvl o16 o32 q16 q32 w16 w32 l32 lpc lmp rdu rdk ntm
+#========================================================================================================
 !inject initwin.obj                 nt  nta ntp             o32
 !inject nodefwin.obj                                    o16
 !inject pmdlg.obj                                           o32
@@ -11,42 +11,42 @@
 !inject pmmain.obj                                          o32
 !inject pmmisc.obj                                          o32
 !inject pmnew.obj                                           o32
-!inject windisp.obj                 nt  nta ntp             o32         w16 w32
-!inject windlg.obj                  nt  nta ntp                         w16 w32
-!inject windlg2.obj                 nt  nta ntp                         w16 w32
-!inject windrvr.obj                 nt  nta ntp                         w16 w32
-!inject wingen.obj                  nt  nta ntp             o32         w16 w32
-!inject winglob.obj                 nt  nta ntp             o32         w16 w32
-!inject winio.obj                   nt  nta ntp             o32         w16 w32
-!inject winkey.obj                  nt  nta ntp             o32         w16 w32
-!inject winlines.obj                nt  nta ntp             o32         w16 w32
-!inject winlsem.obj                 nt  nta ntp
-!inject winmain.obj                 nt  nta ntp                         w16 w32
-!inject winmisc.obj                 nt  nta ntp                         w16 w32
-!inject winmove.obj                 nt  nta ntp             o32         w16 w32
-!inject winnew.obj                  nt  nta ntp                         w16 w32
-!inject winpaint.obj                nt  nta ntp             o32         w16 w32
-!inject winrtns.obj                 nt  nta ntp         o16 o32         w16 w32
-!inject wintitle.obj                nt  nta ntp                         w16 w32
-!inject wmain.obj                   nt  nta ntp                         w16 w32
-!inject dwapi.obj                   nt  nta ntp             o32         w16 w32
+!inject windisp.obj                 nt  nta ntp             o32         w16 w32                     ntm
+!inject windlg.obj                  nt  nta ntp                         w16 w32                     ntm
+!inject windlg2.obj                 nt  nta ntp                         w16 w32                     ntm
+!inject windrvr.obj                 nt  nta ntp                         w16 w32                     ntm
+!inject wingen.obj                  nt  nta ntp             o32         w16 w32                     ntm
+!inject winglob.obj                 nt  nta ntp             o32         w16 w32                     ntm
+!inject winio.obj                   nt  nta ntp             o32         w16 w32                     ntm
+!inject winkey.obj                  nt  nta ntp             o32         w16 w32                     ntm
+!inject winlines.obj                nt  nta ntp             o32         w16 w32                     ntm
+!inject winlsem.obj                 nt  nta ntp                                                     ntm
+!inject winmain.obj                 nt  nta ntp                         w16 w32                     ntm
+!inject winmisc.obj                 nt  nta ntp                         w16 w32                     ntm
+!inject winmove.obj                 nt  nta ntp             o32         w16 w32                     ntm
+!inject winnew.obj                  nt  nta ntp                         w16 w32                     ntm
+!inject winpaint.obj                nt  nta ntp             o32         w16 w32                     ntm
+!inject winrtns.obj                 nt  nta ntp         o16 o32         w16 w32                     ntm
+!inject wintitle.obj                nt  nta ntp                         w16 w32                     ntm
+!inject wmain.obj                   nt  nta ntp                         w16 w32                     ntm
+!inject dwapi.obj                   nt  nta ntp             o32         w16 w32                     ntm
 
 !else
 
-#                       d16 d32 dpm nt  nta ntp nvc nvl o16 o32 q16 q32 w16 w32 l32 lpc lmp rdu rdk
-#===================================================================================================
-!inject nodefwin.obj                nt  nta ntp         o16 o32         w16 w32
-!inject winrtns.obj                 nt  nta ntp         o16 o32         w16 w32
+#                       d16 d32 dpm nt  nta ntp nvc nvl o16 o32 q16 q32 w16 w32 l32 lpc lmp rdu rdk ntm
+#=======================================================================================================
+!inject nodefwin.obj                nt  nta ntp         o16 o32         w16 w32                     ntm
+!inject winrtns.obj                 nt  nta ntp         o16 o32         w16 w32                     ntm
 
 !endif
 
 !include ../../../../objlist.mif
 
 !ifeq default_windowing 1
-#                       d16 d32 dpm nt  nta ntp nvc nvl o16 o32 q16 q32 w16 w32 l32 lpc lmp rdu rdk
-#===================================================================================================
-!inject dinitwin.obj                nt  nta ntp             o32
-!inject dwmain.obj                  nt  nta ntp                         w16 w32
+#                       d16 d32 dpm nt  nta ntp nvc nvl o16 o32 q16 q32 w16 w32 l32 lpc lmp rdu rdk ntm
+#=======================================================================================================
+!inject dinitwin.obj                nt  nta ntp             o32                                     ntm
+!inject dwmain.obj                  nt  nta ntp                         w16 w32                     ntm
 !endif
 
 objsuffix=files
