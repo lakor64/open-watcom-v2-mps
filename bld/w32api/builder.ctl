@@ -27,6 +27,7 @@ set PROJDIR=<CWD>
     <CCCMD> nt386/lib/directx/*           "<OWRELROOT>/lib386/nt/directx/"
 
     <CCCMD> ntaxp/lib/*                   "<OWRELROOT>/libaxp/nt/"
+    <CCCMD> ntmps/lib/*                   "<OWRELROOT>/libmps/nt/"
 
     <CCCMD> ntmps/lib/*                   "<OWRELROOT>/libmps/nt/"
 
