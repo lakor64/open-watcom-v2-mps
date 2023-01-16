@@ -139,7 +139,21 @@ bool OptionsInit( int argc, char **argv )
             switch( argv[0][1] ) {
             case 'b':
             case 'B':
-                // ignore the -bt=NT crap
+#if defined ( AS_MIPS )
+                switch( *s ) {
+                case 't':
+                    ++s;
+                    if ( *s == '=' ) ++s;
+                    if ( *s == '\0' ) goto errInvalid;
+                    if ( strcmp(s, "nt") == 0 ) {
+                        _SetOption( OBJ_COFF );
+                    }
+                    break;
+                default:
+                    goto errInvalid;
+                }
+#endif
+                // ignore the -bt=NT crap on other platforms
                 break;
             case 'd':
             case 'D':

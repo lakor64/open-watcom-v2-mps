@@ -435,6 +435,8 @@ static void do_alias( FILE *miffile, struct Alias *alias, char *outdir )
             add_system( &aliasmips, syselem->system );
         } else if( !strcmp( syselem->system, "mps" ) ) {        /* MIPS */
             add_system( &aliasmips, syselem->system );
+        } else if ( !strcmp( syselem->system, "ntm" ) ) {       /* MIPS */
+            add_system( &aliasmips, syselem->system );
         } else {                                                /* x86 */
             add_system( &aliasix86, syselem->system );
         }

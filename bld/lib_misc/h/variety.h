@@ -130,6 +130,8 @@
         #define __NT_AXP__
     #elif defined(__PPC__)
         #define __NT_PPC__
+    #elif defined(__MIPS__)
+        #define __NT_MPS__
     #else
         #error unrecognized processor for NT
     #endif

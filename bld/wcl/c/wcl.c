@@ -748,7 +748,7 @@ static int Parse( const char *cmd )
                         case 'q':
                             Flags.be_quiet = true;
                             break;
-#ifdef WCLI86
+#if defined(WCLI86) || defined(WCLMPS)
                         case 'w':
                             Flags.windows = true;
                             break;
@@ -919,7 +919,11 @@ void BuildSystemLink( FILE *fp )
         Fputnl( "system ntppc", fp );
   #endif
 #elif defined( WCLMPS )
+    if ( Flags.windows ) {
+        Fputnl( "system ntmips", fp );
+    } else {
         Fputnl( "system linuxmips", fp );
+    }
 #else
   #if defined( __OS2__ )
         Fputnl( "system os2v2", fp );

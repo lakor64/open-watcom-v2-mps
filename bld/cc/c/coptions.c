@@ -2077,8 +2077,6 @@ static void InitCPUModInfo( void )
     CodePtrSize = TARGET_POINTER;
   #if _CPU == _AXP
     GenSwitches |= CGSW_GEN_OBJ_COFF;
-  #else
-    GenSwitches |= CGSW_GEN_OBJ_ELF;
   #endif
 #else
     #error InitCPUModInfo not configured for system

@@ -164,6 +164,8 @@ cg_init_info _CGAPI     BEInitCg( cg_switches switches,
         info.version.target = II_TARG_370; /* NYI -- for now */
 #elif _TARGET & _TARG_AXP
         info.version.target = II_TARG_AXP;
+#elif _TARGET & _TARG_MIPS
+        info.version.target = II_TARG_MIPS;
 #endif
         info.version.revision = II_REVISION;
     }

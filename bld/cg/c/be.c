@@ -142,6 +142,8 @@ extern  cg_init_info    BEInit( cg_switches cg_data, cg_target_switches tg_data,
     info.version.target = II_TARG_AXP;
 #elif _TARGET & _TARG_PPC
     info.version.target = II_TARG_PPC;
+#elif _TARGET & _TARG_MIPS
+    info.version.target = II_TARG_MIPS;
 #else
     #error UNKNOWN TARGET
 #endif

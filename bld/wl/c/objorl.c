@@ -239,6 +239,7 @@ static bool CheckFlags( orl_file_handle filehdl )
         typemask = LS_HAVE_PPC_CODE;
         break;
     case ORL_MACHINE_TYPE_R3000:
+    case ORL_MACHINE_TYPE_R4000:
         typemask = LS_HAVE_MIPS_CODE;
         break;
     case ORL_MACHINE_TYPE_NONE:

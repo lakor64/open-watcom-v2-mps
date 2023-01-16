@@ -70,6 +70,13 @@ set PROJDIR=<CWD>
     <CCCMD> exe2bin/ntaxp/exe2bin.exe       "<OWRELROOT>/axpnt/"
     <CCCMD> lnk/ntaxp/wlink.lnk             "<OWRELROOT>/axpnt/"
 
+    <CCCMD> ntmps.dll/wlink.exe             "<OWRELROOT>/mpsnt/"
+    <CCCMD> ntmps.dll/wlink.sym             "<OWRELROOT>/mpsnt/"
+    <CCCMD> ntmps.dll/wlinkd.dll            "<OWRELROOT>/mpsnt/"
+    <CCCMD> ntmps.dll/wlinkd.sym            "<OWRELROOT>/mpsnt/"
+    <CCCMD> exe2bin/ntmps/exe2bin.exe       "<OWRELROOT>/mpsnt/"
+    <CCCMD> lnk/ntmps/wlink.lnk             "<OWRELROOT>/mpsnt/"
+
     <CCCMD> qnx386/wlink.exe                "<OWRELROOT>/qnx/binq/wlink"
     <CCCMD> qnx386/wlink.sym                "<OWRELROOT>/qnx/sym/"
     <CCCMD> lnk/qnx/wlink.lnk               "<OWRELROOT>/qnx/etc/"
