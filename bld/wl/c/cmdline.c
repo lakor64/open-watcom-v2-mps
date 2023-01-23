@@ -2,7 +2,7 @@
 *
 *                            Open Watcom Project
 *
-* Copyright (c) 2002-2022 The Open Watcom Contributors. All Rights Reserved.
+* Copyright (c) 2002-2023 The Open Watcom Contributors. All Rights Reserved.
 *    Portions Copyright (c) 1983-2002 Sybase, Inc. All Rights Reserved.
 *
 *  ========================================================================
@@ -81,7 +81,6 @@ typedef struct {
     void            (*free_func)(void);
 } select_format;
 
-file_defext             Extension;
 file_list               **CurrFList;
 tok                     Token;
 commandflag             CmdFlags;
@@ -145,12 +144,12 @@ static void ResetCmdFile( void )
  * do all the initialization necessary for parsing a command file
  */
 {
+    memset( &FmtData, 0, sizeof( FmtData ) );
     SysBlocks = NULL;
-    Extension = E_LOAD;
+    FmtData.def_ext = E_LOAD;
     Name = NULL;
     CmdFlags = CF_UNNAMED;
     ObjPath = NULL;
-    memset( &FmtData, 0, sizeof( FmtData ) );
     FmtData.base = NO_BASE_SPEC;
     FmtData.objalign = NO_BASE_SPEC;
     FmtData.type = MK_ALL;
@@ -415,18 +414,18 @@ void SetFormat( void )
     char        *fname;
 
     if( CmdFlags & CF_NO_EXTENSION ) {
-        fname = Name;
-    } else {
+        FmtData.def_ext = E_NONE;
 #ifdef _RAW
-        if( FmtData.output_hex ) {  // override default extension if hex or raw (bin)
-            Extension = E_HEX;      //   has been specified
+    } else {
+        if( FmtData.output_hex ) {      // override default extension if hex or raw (bin)
+            FmtData.def_ext = E_HEX;    //   has been specified
         } else if( FmtData.output_raw ) {
-            Extension = E_BIN;
+            FmtData.def_ext = E_BIN;
         }
 #endif
-        fname = FileName( Name, strlen( Name ), Extension, CmdFlags & CF_UNNAMED );
-        _LnkFree( Name );
     }
+    fname = FileName( Name, strlen( Name ), FmtData.def_ext, CmdFlags & CF_UNNAMED );
+    _LnkFree( Name );
     Root->outfile = NewOutFile( fname );
     Name = NULL;
 #ifdef _EXE
